@@ -1,0 +1,10 @@
+@startuml
+
+entity "投稿" as Posts {
+  + 投稿ID [PK]
+  タイトル
+  画像パス
+  投稿日
+}
+
+@enduml
