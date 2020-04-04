@@ -2,6 +2,11 @@ FROM php:7.4-fpm-alpine
 
 SHELL ["/bin/ash", "-oeux", "pipefail", "-c"]
 
+# tinker(psysh)
+ARG PSYSH_DIR=/usr/local/share/psysh
+ARG PSYSH_PHP_MANUAL=$PSYSH_DIR/php_manual.sqlite
+ARG PHP_MANUAL_URL=http://psysh.org/manual/ja/php_manual.sqlite
+
 # timezone
 ARG TZ
 
@@ -26,6 +31,7 @@ RUN apk update && \
   git clone https://github.com/phpredis/phpredis.git /usr/src/php/ext/redis && \
   apk del .build-dependencies && \
   docker-php-ext-install intl pdo_mysql mbstring zip bcmath redis && \
+  mkdir $PSYSH_DIR && curl $PHP_MANUAL_URL -o $PSYSH_PHP_MANUAL && \
   curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && \
   composer config -g process-timeout 3600 && \
   composer config -g repos.packagist composer https://packagist.jp && \
@@ -36,4 +42,4 @@ COPY ./docker/production/php/php.ini /usr/local/etc/php/php.ini
 COPY ./docker/production/php/php-fpm.conf /usr/local/etc/php-fpm.conf
 
 # source code
-COPY src/ /var/www/html
+COPY --chown=www-data:www-data src/ /var/www/html
