@@ -33,37 +33,37 @@ class PostController extends Controller
     {
         DB::table('posts')->delete();
         DB::table('posts')->insert([
-            'title' => 'チワワ',
+            'title' => '凛々しいチワワさん',
             'image_url' => 'https://portfolio-laravel-ap-northeast-1-877070015178.s3.ap-northeast-1.amazonaws.com/images/Ol6TkvP0Wq8h66das0fl1ShjYCtdyZY4qVOJ8V2E.jpeg',
             'created_at' => new \DateTime(),
         ]);
         DB::table('posts')->insert([
-            'title' => '海辺',
+            'title' => '海辺でまったり',
             'image_url' => 'https://portfolio-laravel-ap-northeast-1-877070015178.s3.ap-northeast-1.amazonaws.com/images/69wJNX0310D51OWxd7ItvYTHvMmUn3aAXeMVl0nL.jpeg',
             'created_at' => new \DateTime(),
         ]);
         DB::table('posts')->insert([
-            'title' => 'くしゃみ',
+            'title' => 'へっぷしっ！！',
             'image_url' => 'https://portfolio-laravel-ap-northeast-1-877070015178.s3.ap-northeast-1.amazonaws.com/images/SV47lj0Cl4ByiPngkcQrb62NSawx3wxbZJAMXHiq.jpeg',
             'created_at' => new \DateTime(),
         ]);
         DB::table('posts')->insert([
-            'title' => '眠そう',
+            'title' => 'ウトウト…',
             'image_url' => 'https://portfolio-laravel-ap-northeast-1-877070015178.s3.ap-northeast-1.amazonaws.com/images/U6XCSqpUkPeLsQwnVNFNuFMzpJaBqoKxEOxkuKYu.jpeg',
             'created_at' => new \DateTime(),
         ]);
         DB::table('posts')->insert([
-            'title' => 'トイプードル',
+            'title' => '切ない顔のトイプーちゃん',
             'image_url' => 'https://portfolio-laravel-ap-northeast-1-877070015178.s3.ap-northeast-1.amazonaws.com/images/dzFFet6Wut5QvL9YJYdeyYU56n2zytwTOkTShW8P.jpeg',
             'created_at' => new \DateTime(),
         ]);
         DB::table('posts')->insert([
-            'title' => 'コーギー',
+            'title' => 'お散歩中のコーギー',
             'image_url' => 'https://portfolio-laravel-ap-northeast-1-877070015178.s3.ap-northeast-1.amazonaws.com/images/SkxAx0kIga8VUuLjjt88IIUNbPJJheUs6dpBJsBj.jpeg',
             'created_at' => new \DateTime(),
         ]);
         DB::table('posts')->insert([
-            'title' => 'あくび',
+            'title' => 'ふわぁ〜',
             'image_url' => 'https://portfolio-laravel-ap-northeast-1-877070015178.s3.ap-northeast-1.amazonaws.com/images/avf8Ym4492gXbsJLHQSeplH1BWiypQTcmp6Lklpg.jpeg',
             'created_at' => new \DateTime(),
         ]);
