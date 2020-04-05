@@ -12,6 +12,7 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('posts')->delete();
         DB::table('posts')->insert([
             'title' => 'チワワ',
             'image_url' => 'https://portfolio-laravel-ap-northeast-1-877070015178.s3.ap-northeast-1.amazonaws.com/images/Ol6TkvP0Wq8h66das0fl1ShjYCtdyZY4qVOJ8V2E.jpeg',
