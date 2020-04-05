@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="image" class="col-sm-3 col-form-label">画像</label>
+                    <label for="image" class="col-sm-3 col-form-label">画像(最大2048KB)</label>
                     <div class="col-sm">
                         <input type="file" id="image" name="image" class="form-control">
                     </div>
