@@ -16,10 +16,22 @@
         <nav class="navbar navbar-dark bg-dark shadown-sm">
             <div class="container">
                 <a class="navbar-brand" href="#"><strong>Inumite.com</strong></a>
+                <div class="float-right">
+                    <a href='post/reset' class="btn btn-danger">データ初期化</a>
+                </div>
             </div>
         </nav>
     </header>
     <div class="container py-4">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <section>
             <div id="content">
                 @yield ('content')
