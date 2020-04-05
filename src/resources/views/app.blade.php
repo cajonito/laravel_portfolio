@@ -30,6 +30,9 @@
             <p class="float-right">
                 <a href="#">トップへ戻る</a>
             </p>
+            <p>
+                <a href="https://www.pakutaso.com" title="フリー写真素材ぱくたそ">フリー写真素材ぱくたそ </a>
+            </p>
         </div>
     </footer>
     <!-- Optional JavaScript -->
