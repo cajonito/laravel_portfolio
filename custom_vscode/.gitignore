@@ -1,0 +1,4 @@
+*
+!.gitignore
+!replace.sh
+!beautifier_hacked.js
