@@ -2,7 +2,7 @@
 @section ('title', 'Inumite')
 @section ('content')
 <div id="post-form" class="container">
-    <form action="" enctype="multipart/form-data">
+    <form method="POST" action="/post" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-sm-3"></div>
@@ -20,120 +20,26 @@
     </form>
 </div>
 <div id="main" class="pt-4">
-    <h1>最新の投稿</h1>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Thumbnail">
-                    <title>犬</title>
-                    <rect width="100%" height="100%" fill="#55595c"></rect>
-                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                </svg>
-                <div class="card-body">
-                    <p class="card-text">我が家の犬</p>
+    @isset ($posts)
+        <h1>最新の投稿</h1>
+        <div class="row">
+            @foreach ($posts as $post)
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder: Thumbnail">
+                            <title>{{ $post->title }}</title>
+                            <rect width="100%" height="100%" fill="#55595c"></rect>
+                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                        </svg>
+                        <div class="card-body">
+                            <p class="card-text">{{ $post->title }}</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Thumbnail">
-                    <title>犬</title>
-                    <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                        dy=".3em">Thumbnail</text>
-                </svg>
-                <div class="card-body">
-                    <p class="card-text">我が家の犬</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Thumbnail">
-                    <title>犬</title>
-                    <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                        dy=".3em">Thumbnail</text>
-                </svg>
-                <div class="card-body">
-                    <p class="card-text">我が家の犬</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Thumbnail">
-                    <title>犬</title>
-                    <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                        dy=".3em">Thumbnail</text>
-                </svg>
-                <div class="card-body">
-                    <p class="card-text">我が家の犬</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Thumbnail">
-                    <title>犬</title>
-                    <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                        dy=".3em">Thumbnail</text>
-                </svg>
-                <div class="card-body">
-                    <p class="card-text">我が家の犬</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Thumbnail">
-                    <title>犬</title>
-                    <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                        dy=".3em">Thumbnail</text>
-                </svg>
-                <div class="card-body">
-                    <p class="card-text">我が家の犬</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Thumbnail">
-                    <title>犬</title>
-                    <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                        dy=".3em">Thumbnail</text>
-                </svg>
-                <div class="card-body">
-                    <p class="card-text">我が家の犬</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-                    aria-label="Placeholder: Thumbnail">
-                    <title>犬</title>
-                    <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                        dy=".3em">Thumbnail</text>
-                </svg>
-                <div class="card-body">
-                    <p class="card-text">我が家の犬</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    @endisset
 </div>
 @endsection
