@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index');
 Route::post('/post', 'PostController@create');
+Route::get('/post/reset', 'PostController@reset');
 
 Route::get('/todo', 'TodoController@index');
 Route::post('/todo', 'TodoController@create');
