@@ -11,7 +11,7 @@
             "port": 9000,
             "pathMappings": {
                 // "Docker Directory": "Local Directory"
-                "/work": "${workspaceFolder}/src" // Set the value of PROJECT_PATH
+                "/work": "${workspaceRoot}/src" // Set the value of PROJECT_PATH
             },
         }
     ]
