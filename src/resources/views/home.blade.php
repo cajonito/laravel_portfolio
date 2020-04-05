@@ -13,6 +13,12 @@
                         <input type="text" id="title" name="title" class="form-control">
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label for="image" class="col-sm-3 col-form-label">画像</label>
+                    <div class="col-sm">
+                        <input type="file" id="image" name="image" class="form-control">
+                    </div>
+                </div>
                 <button class="btn btn-primary btn-block">投稿</button>
             </div>
             <div class="col-sm-3"></div>
@@ -20,19 +26,16 @@
     </form>
 </div>
 <div id="main" class="pt-4">
-    @isset ($posts)
+    @if (count($posts) >= 1)
         <h1>最新の投稿</h1>
         <div class="row">
             @foreach ($posts as $post)
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                            role="img" aria-label="Placeholder: Thumbnail">
-                            <title>{{ $post->title }}</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                        </svg>
+                        <div>
+                            <img src="{{ $post->image_url }}" alt="{{ $post->title }}"
+                                style="width:auto;height:auto;max-width:100%;max-height:100%">
+                        </div>
                         <div class="card-body">
                             <p class="card-text">{{ $post->title }}</p>
                         </div>
@@ -40,6 +43,6 @@
                 </div>
             @endforeach
         </div>
-    @endisset
+    @endif
 </div>
 @endsection
