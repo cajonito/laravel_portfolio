@@ -15,16 +15,17 @@ class PostController extends Controller
     public function create(Request $request)
     {
         $this->validate($request, Post::$rules);
-        $post = new Post;
-        $form = $request->all();
-        unset($form['_token']);
+
         $image = $request->file('image');
         // $image = Image::make($image)->orientate();
-        unset($form['image']);
+
         $path = Storage::disk('s3')->putFile('images', $image, 'public');
         $url = Storage::disk('s3')->url($path);
-        $form['image_url'] = $url;
-        $post->fill($form)->save();
+
+        $post = new Post;
+        $post->title = $request->input('title');
+        $post->image_url = $url;
+        $post->save();
 
         return redirect('/');
     }
