@@ -1,4 +1,4 @@
 AAA
-BBB
+BB
 CCC
 DDD
