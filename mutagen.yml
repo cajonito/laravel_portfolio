@@ -1,0 +1,13 @@
+sync:
+  app:
+    mode: "two-way-resolved"
+    alpha: "./"
+    beta: "inumite:/home/vagrant/app"
+    ignore:
+      vcs: true
+      paths:
+        - "/log"
+        - "/tmp"
+    permissions:
+      defaultFileMode: "644"
+      defaultDirectoryMode: "755"
