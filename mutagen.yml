@@ -6,8 +6,28 @@ sync:
     ignore:
       vcs: true
       paths:
+        - logs/
+        - src/storage/
         - "/log"
         - "/tmp"
     permissions:
       defaultFileMode: "644"
       defaultDirectoryMode: "755"
+  storage:
+    mode: "two-way-resolved"
+    alpha: "./src/storage"
+    beta: "inumite:/home/vagrant/app/src/storage"
+    ignore:
+      vcs: true
+    permissions:
+      defaultFileMode: "666"
+      defaultDirectoryMode: "777"
+  log:
+    mode: "two-way-resolved"
+    alpha: "./logs"
+    beta: "inumite:/home/vagrant/app/logs"
+    ignore:
+      vcs: true
+    permissions:
+      defaultFileMode: "666"
+      defaultDirectoryMode: "777"
