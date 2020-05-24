@@ -26,5 +26,13 @@ Vagrant.configure('2') do |config|
 
     curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     chmod +x /usr/local/bin/docker-compose
+    echo "[Success] Install Docker"
+  SHELL
+
+  config.vm.provision 'shell',
+    run: 'always',
+    inline: <<-SHELL
+    sh app/normalize_permissions.sh
+    echo "[Success] Set Permissions"
   SHELL
 end
